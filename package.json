@@ -1,0 +1,14 @@
+{
+  "name": "d14n-splash",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "concurrently -n 'server,scss' 'http-server .' 'node-sass -w style.scss style.css'"
+  },
+  "dependencies": {
+    "concurrently": "4.1.0",
+    "http-server": "0.11.1",
+    "node-sass": "4.12.0"
+  }
+}
