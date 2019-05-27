@@ -54,7 +54,7 @@ a {
 
 $primary: #0984e3;
 $primary-alt: #0984e3;
-$dark: #111;
+$dark: #020122;
 
 $screen-xs: 380px;
 $screen-sm: 640px;
@@ -82,7 +82,11 @@ $screen-lg: 1180px;
 html {
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
-  color: $dark;
+  color: #FFF;
+  background-color: $dark;
+  background-image: url(./images/bg-hex.png);
+  background-position: top;
+  background-size: 1921px 53px;
   scroll-behavior: smooth;
   font-size: 16px;
 
@@ -106,49 +110,48 @@ html {
   box-sizing: inherit;
 }
 
-.Hero,
-.HeroPlaceholder {
-  height: 102vh;
-}
-
 .Hero {
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
+  position: relative;
   display: flex;
+  height: 102vh;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: $dark;
   color: #FFF;
 
   span {
     color: $primary;
   }
 
+  &-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50vh;
+    background: linear-gradient(to bottom, transparent 0%, $dark 50%, transparent 100%);
+    transform: translateY(50%);
+    pointer-events: none;
+  }
+
   &-inner {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
     padding: 1rem;
     max-width: 46rem;
+    margin-bottom: 5vh;
   }
 
   &-title {
     font-size: 6rem;
     font-weight: 500;
     margin-bottom: 1.5rem;
-    text-shadow: 0 0 3px rgba($dark, 1);
+    text-shadow: 0 0 2px rgba($dark, 1);
   }
 
   &-tagline {
     font-size: 2rem;
     line-height: 1.5;
     margin-bottom: 2rem;
-    text-shadow: 0 0 3px rgba($dark, 1);
+    text-shadow: 0 0 2px rgba($dark, 1);
   }
 
   &-button {
@@ -165,11 +168,11 @@ html {
 
   &-more {
     display: block;
-    color: #FFF;
-    opacity: 0.5;
+    color: #CCC;
+    text-shadow: 0 0 2px rgba($dark, 1);
 
     &:hover {
-      opacity: 0.8;
+      color: #FFF;
     }
   }
 }
@@ -177,210 +180,109 @@ html {
 
 
 .Portfolio {
-  position: relative;
-  z-index: 3;
-  padding: 3rem 3rem 10rem;
+  padding: 25vh 2rem 10rem;
   min-height: 102vh;
-  background: #FFF;
+  max-width: 1220px;
+  margin: 0 auto;
 
   &-title {
     font-size: 3.6rem;
     font-weight: bold;
-    margin-bottom: 2rem;
-  }
-
-  &-main {
-    display: flex;
-
-    @include md-query {
-      flex-direction: column;
-    }
-  }
-
-  &-menu {
-    @include md-query {
-      margin-bottom: 1rem;
-    }
-
-    &-item {
-      display: block;
-      font-size: 2.2rem;
-      margin-bottom: 1.5rem;
-      color: $dark;
-      cursor: pointer;
-      opacity: 0.3;
-
-      &.is-active,
-      &:hover {
-        opacity: 1;
-      }
-
-      &.is-active {
-        color: $primary-alt;
-      }
-    }
-  }
-
-  &-content {
-    padding-left: 5rem;
-
-    @include md-query {
-      padding: 0;
-    }
-
-    &-item {
-      display: none;
-      font-size: 1.6rem;
-      line-height: 1.6;
-
-      &.is-active {
-        display: block;
-      }
-
-      img {
-        max-width: 100%;
-        display: block;
-        margin: 0 auto 2rem;
-      }
-
-      p {
-        margin-bottom: 2rem;
-      }
-
-      blockquote {
-        font-style: italic;
-        margin-bottom: 1rem;
-
-        &:before,
-        &:after {
-          display: inline;
-          color: $primary-alt;
-          font-style: normal;
-        }
-        &:before {
-          content: '\201C';
-        }
-        &:after {
-          font-family: sans-serif;
-          content: '\201D';
-        }
-      }
-      
-      small {
-        display: block;
-        font-size: 1rem;
-        opacity: 0.6;
-        margin-bottom: 2rem;
-
-        strong {
-          font-weight: bold;
-        }
-      }
-    }
-  }
-
-  &-button {
-    display: block;
-    width: 16rem;
-    padding: 1.5rem 1rem;
-    font-size: 1rem;
-    letter-spacing: 0.15rem;
-    font-weight: 500;
-    text-transform: uppercase;
+    margin-bottom: 5rem;
     text-align: center;
-    background: $primary-alt;
-    color: #FFF;
+  }
 
-    &.is-disabled {
-      color: #888;
-      border: 1px solid #444;
-      background: none;
+  &-items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1rem;
+  }
+
+  &-item {
+    flex: 1;
+    min-width: 280px;
+    margin: 1rem;
+
+    &-img {
+      width: 100%;
+      max-height: 90vh;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      background-position: center;
+      background-size: cover;
+
+      &:after {
+        content: '';
+        display: block;
+        padding-top: 140%;
+      }
+    }
+
+    &-title {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: #FFF;
+    }
+
+    &-desc {
+      font-size: 1rem;
+      color: #FFF;
+      opacity: 0.8;
     }
   }
 }
 
 
-
-.Contact {
-  position: relative;
-  z-index: 3;
-  padding: 3rem;
-  min-height: 102vh;
-  background: $primary;
+.Experience {
+  padding: 10rem 0;
 
   &-title {
-    font-size: 4rem;
+    font-size: 2.6rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  &-logos {
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      margin: 1rem 2.5rem;
+      opacity: 0.5;
+    }
+  }
+}
+
+
+.Contact {
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+
+  &-title {
+    font-size: 2.6rem;
     font-weight: bold;
     margin-bottom: 2rem;
     color: #FFF;
   }
 
-  &-main {
-    display: flex;
-
-    @include md-query {
-      flex-direction: column;
-    }
-  }
-
-  &-form {
-    position: relative;
-    flex: 1 0 700px;
-
-    @include md-query {
-      flex-basis: 100%;
-    }
-
-    &-info {
-      display: flex;
-      margin-bottom: 1rem;
-
-      @include md-query {
-        flex-direction: column;
-      }
-    }
-
-    input,
-    textarea {
-      display: block;
-      width: calc(100% - 1rem);
-      margin: 0 0.5rem;
-      font-size: 1.4rem;
-      padding: 0.8rem 0.8rem;
-      border-radius: 2px;
-      background: #FFF;
-      border: none;
-      resize: none;
-      outline: none;
-      font-weight: 300;
-    }
-
-    button {
-      display: block;
-      width: calc(100% - 1rem);
-      margin: 1rem 0.5rem 0;
-      padding: 1.5rem 2rem;
-      font-size: 1rem;
-      letter-spacing: 0.15rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      background: $dark;
-      border: none;
-      color: #FFF;
-    }
-  }
-
-  &-about {
-    flex-shrink: 1;
-    margin: 0 0.5rem 0 1rem;
-    padding: 1.25rem;
+  &-button {
+    display: block;
+    max-width: 300px;
+    padding: 1.5rem 2rem;
+    margin: 0 auto;
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    background: $primary;
     color: #FFF;
-    border: 1px solid #FFF;
-
-    p {
-      font-size: 1.5rem;
-      line-height: 1.5;
-      margin-bottom: 2rem;
-    }
   }
 }

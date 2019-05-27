@@ -10,8 +10,8 @@
     <script src="./scripts/script.js"></script>
   </head>
   <body>
-    <div class="HeroPlaceholder"></div>
     <div class="Hero">
+      <div class="Hero-fade"></div>
       <div class="Hero-inner">
         <h1 class="Hero-title">
           We are <span>D14N</span>.
@@ -30,105 +30,43 @@
     </div>
 
     <div class="Portfolio" id="portfolio">
-      <h2 class="Portfolio-title">Our work.</h2>
-      <div class="Portfolio-main">
-        <div class="Portfolio-menu">
-          <a class="Portfolio-menu-item is-active" data-project="zfgrants">ZFGrants</a>
-          <a class="Portfolio-menu-item" data-project="monerowallet">MoneroWallet</a>
-          <a class="Portfolio-menu-item" data-project="joule">Joule</a>
-          <a class="Portfolio-menu-item" data-project="tiphub">TipHub</a>
-        </div>
-        <div class="Portfolio-content">
-          <div class="Portfolio-content-item is-active" data-project="zfgrants">
-            <p>
-              In collaboration with the Zcash Foundation, we built a sustainiable
-              community-driven funding platform for the future of Zcash development.
-            </p>
-            <img width="700" src="./images/zf-grants.png" />
-            <p>
-              A mixture of grant-based and crowd-based funding has given the
-              Foundation a system to fund proposals directly today, but to
-              turn it over to the community to keep development incentivized
-              going forward.
-            </p>
-            <blockquote><!--
-              -->ZF Grants is a huge step forward for fundraising in the Zcash
-              ecosystem, and we're absolutely thrilled with [their] work and
-              support!
-            </blockquote>
-            <small>
-              — <strong>Josh Cincinnati</strong>, Executive Director of the <strong>Zcash Foundation</strong>
-            </small>
-            <a class="Portfolio-button" href="https://grants.zfnd.org/" target="_blank">
-              Check it out
-            </a>
-          </div>
+      <h2 class="Portfolio-title">Our projects.</h2>
+      <div class="Portfolio-items">
+        <a class="Portfolio-item" href="https://grants.zfnd.org/" target="_blank">
+          <div class="Portfolio-item-img" style="background-image: url('./images/portfolio-zfgrants.png')"></div>
+          <h3 class="Portfolio-item-title">ZFGrants</h3>
+          <div class="Portfolio-item-desc">Community grants platform</div>
+        </a>
 
-          <div class="Portfolio-content-item" data-project="monerowallet">
-            <p>
-              The first open-source Monero web wallet of its kind, MoneroWallet
-              enables hardware wallet users to securely transact without
-              having to run a full node themselves.
-            </p>
-            <a class="Portfolio-button is-disabled">
-              Launching soon
-            </a>
-          </div>
+        <a class="Portfolio-item" href="https://lightningjoule.org/" target="_blank">
+          <div class="Portfolio-item-img" style="background-image: url('./images/portfolio-joule.png')"></div>
+          <h3 class="Portfolio-item-title">Joule</h3>
+          <div class="Portfolio-item-desc">Lightning browser extension</div>
+        </a>
 
-          <div class="Portfolio-content-item" data-project="joule">
-            <p>
-              Joule is a browser extension that brings the speed and ease of
-              Lightning transactions directly to your browser.
-            </p>
-            <p>
-              By directly connecting your node to web apps, micro payments are
-              made seamless and easy. And by integrating with WebLN, web apps
-              can go beyond simple payments.
-            </p>
-            <a class="Portfolio-button" href="https://lightningjoule.com/" target="_blank">
-              Check it out
-            </a>
-          </div>
-
-          <div class="Portfolio-content-item" data-project="tiphub">
-            <p>
-              TipHub aims to bring sustainable funding to open source projects
-              through tipping with Lightning. Payments are made directly to
-              maintainers Lightning nodes, with no platform fees.
-            </p>
-            <a class="Portfolio-button" href="https://tiphub.io/" target="_blank">
-              Check it out
-            </a>
-          </div>
+        <div class="Portfolio-item">
+          <div class="Portfolio-item-img" style="background-image: url('./images/portfolio-mw.png')"></div>
+          <h3 class="Portfolio-item-title">Monero Wallet</h3>
+          <div class="Portfolio-item-desc">Hardware-enabled web wallet</div>
         </div>
       </div>
     </div>
 
-    <div class="Contact" id="contact-us">
-      <h2 class="Contact-title">Contact us.</h2>
-      <div class="Contact-main">
-        <form class="Contact-form" action="https://formspree.io/team@d14n.com" method="POST">
-          <div class="Contact-form-info">
-            <input type="text" name="name" placeholder="Your name" maxlength="100" required />
-            <input type="email" name="_replyto" placeholder="Your email" maxlength="100" required />
-          </div>
-          <textarea name="message" placeholder="Tell us about what you're working on" maxlength="500" rows="12" required></textarea>
-          <button>
-            Send
-          </button>
-        </form>
-        <div class="Contact-about">
-          <p>
-            The D14N team is passionate about working on all things
-            decentralization.
-          </p>
-          <p>
-            We'd love to hear from you about what you're working on, and how we
-            could be involved. Please drop us a note here, and we'll get back to
-            you as soon as possible.
-          </p>
-        </div>
+    <div class="Experience">
+      <h2 class="Experience-title">Who we've worked with.</h2>
+      <div class="Experience-logos">
+        <img src="./images/logo-mew.svg" height="50" />
+        <img src="./images/logo-zf.svg" height="90" />
+        <img src="./images/logo-blockstack.svg" height="50" />
+        <img src="./images/logo-urbit.svg" height="50" />
       </div>
+    </div>
+
+    <div class="Contact" id="contact-us">
+      <h2 class="Contact-title">Interested in collaborating?</h2>
+      <a class="Contact-button" href="mailto:team@d14n.com" target="_blank">
+        Email the team
+      </a>
     </div>
   </body>
 </html>

@@ -53,7 +53,11 @@ a {
 html {
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
-  color: #111;
+  color: #FFF;
+  background-color: #020122;
+  background-image: url(./images/bg-hex.png);
+  background-position: top;
+  background-size: 1921px 53px;
   scroll-behavior: smooth;
   font-size: 16px; }
   @media (max-width: 1180px) {
@@ -72,41 +76,39 @@ html {
 *, *:before, *:after {
   box-sizing: inherit; }
 
-.Hero,
-.HeroPlaceholder {
-  height: 102vh; }
-
 .Hero {
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
+  position: relative;
   display: flex;
+  height: 102vh;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: #111;
   color: #FFF; }
   .Hero span {
     color: #0984e3; }
+  .Hero-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50vh;
+    background: linear-gradient(to bottom, transparent 0%, #020122 50%, transparent 100%);
+    transform: translateY(50%);
+    pointer-events: none; }
   .Hero-inner {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
     padding: 1rem;
-    max-width: 46rem; }
+    max-width: 46rem;
+    margin-bottom: 5vh; }
   .Hero-title {
     font-size: 6rem;
     font-weight: 500;
     margin-bottom: 1.5rem;
-    text-shadow: 0 0 3px #111111; }
+    text-shadow: 0 0 2px #020122; }
   .Hero-tagline {
     font-size: 2rem;
     line-height: 1.5;
     margin-bottom: 2rem;
-    text-shadow: 0 0 3px #111111; }
+    text-shadow: 0 0 2px #020122; }
   .Hero-button {
     display: inline-block;
     padding: 1.5rem 2rem;
@@ -119,152 +121,86 @@ html {
     color: #FFF; }
   .Hero-more {
     display: block;
-    color: #FFF;
-    opacity: 0.5; }
+    color: #CCC;
+    text-shadow: 0 0 2px #020122; }
     .Hero-more:hover {
-      opacity: 0.8; }
+      color: #FFF; }
 
 .Portfolio {
-  position: relative;
-  z-index: 3;
-  padding: 3rem 3rem 10rem;
+  padding: 25vh 2rem 10rem;
   min-height: 102vh;
-  background: #FFF; }
+  max-width: 1220px;
+  margin: 0 auto; }
   .Portfolio-title {
     font-size: 3.6rem;
     font-weight: bold;
-    margin-bottom: 2rem; }
-  .Portfolio-main {
-    display: flex; }
-    @media (max-width: 980px) {
-      .Portfolio-main {
-        flex-direction: column; } }
-  @media (max-width: 980px) {
-    .Portfolio-menu {
-      margin-bottom: 1rem; } }
-  .Portfolio-menu-item {
-    display: block;
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
-    color: #111;
-    cursor: pointer;
-    opacity: 0.3; }
-    .Portfolio-menu-item.is-active, .Portfolio-menu-item:hover {
-      opacity: 1; }
-    .Portfolio-menu-item.is-active {
-      color: #0984e3; }
-  .Portfolio-content {
-    padding-left: 5rem; }
-    @media (max-width: 980px) {
-      .Portfolio-content {
-        padding: 0; } }
-    .Portfolio-content-item {
-      display: none;
-      font-size: 1.6rem;
-      line-height: 1.6; }
-      .Portfolio-content-item.is-active {
-        display: block; }
-      .Portfolio-content-item img {
-        max-width: 100%;
+    margin-bottom: 5rem;
+    text-align: center; }
+  .Portfolio-items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1rem; }
+  .Portfolio-item {
+    flex: 1;
+    min-width: 280px;
+    margin: 1rem; }
+    .Portfolio-item-img {
+      width: 100%;
+      max-height: 90vh;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      background-position: center;
+      background-size: cover; }
+      .Portfolio-item-img:after {
+        content: '';
         display: block;
-        margin: 0 auto 2rem; }
-      .Portfolio-content-item p {
-        margin-bottom: 2rem; }
-      .Portfolio-content-item blockquote {
-        font-style: italic;
-        margin-bottom: 1rem; }
-        .Portfolio-content-item blockquote:before, .Portfolio-content-item blockquote:after {
-          display: inline;
-          color: #0984e3;
-          font-style: normal; }
-        .Portfolio-content-item blockquote:before {
-          content: '\201C'; }
-        .Portfolio-content-item blockquote:after {
-          font-family: sans-serif;
-          content: '\201D'; }
-      .Portfolio-content-item small {
-        display: block;
-        font-size: 1rem;
-        opacity: 0.6;
-        margin-bottom: 2rem; }
-        .Portfolio-content-item small strong {
-          font-weight: bold; }
-  .Portfolio-button {
+        padding-top: 140%; }
+    .Portfolio-item-title {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: #FFF; }
+    .Portfolio-item-desc {
+      font-size: 1rem;
+      color: #FFF;
+      opacity: 0.8; }
+
+.Experience {
+  padding: 10rem 0; }
+  .Experience-title {
+    font-size: 2.6rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center; }
+  .Experience-logos {
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; }
+    .Experience-logos img {
+      margin: 1rem 2.5rem;
+      opacity: 0.5; }
+
+.Contact {
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh; }
+  .Contact-title {
+    font-size: 2.6rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #FFF; }
+  .Contact-button {
     display: block;
-    width: 16rem;
-    padding: 1.5rem 1rem;
+    max-width: 300px;
+    padding: 1.5rem 2rem;
+    margin: 0 auto;
     font-size: 1rem;
     letter-spacing: 0.15rem;
     font-weight: 500;
     text-transform: uppercase;
-    text-align: center;
     background: #0984e3;
     color: #FFF; }
-    .Portfolio-button.is-disabled {
-      color: #888;
-      border: 1px solid #444;
-      background: none; }
-
-.Contact {
-  position: relative;
-  z-index: 3;
-  padding: 3rem;
-  min-height: 102vh;
-  background: #0984e3; }
-  .Contact-title {
-    font-size: 4rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    color: #FFF; }
-  .Contact-main {
-    display: flex; }
-    @media (max-width: 980px) {
-      .Contact-main {
-        flex-direction: column; } }
-  .Contact-form {
-    position: relative;
-    flex: 1 0 700px; }
-    @media (max-width: 980px) {
-      .Contact-form {
-        flex-basis: 100%; } }
-    .Contact-form-info {
-      display: flex;
-      margin-bottom: 1rem; }
-      @media (max-width: 980px) {
-        .Contact-form-info {
-          flex-direction: column; } }
-    .Contact-form input,
-    .Contact-form textarea {
-      display: block;
-      width: calc(100% - 1rem);
-      margin: 0 0.5rem;
-      font-size: 1.4rem;
-      padding: 0.8rem 0.8rem;
-      border-radius: 2px;
-      background: #FFF;
-      border: none;
-      resize: none;
-      outline: none;
-      font-weight: 300; }
-    .Contact-form button {
-      display: block;
-      width: calc(100% - 1rem);
-      margin: 1rem 0.5rem 0;
-      padding: 1.5rem 2rem;
-      font-size: 1rem;
-      letter-spacing: 0.15rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      background: #111;
-      border: none;
-      color: #FFF; }
-  .Contact-about {
-    flex-shrink: 1;
-    margin: 0 0.5rem 0 1rem;
-    padding: 1.25rem;
-    color: #FFF;
-    border: 1px solid #FFF; }
-    .Contact-about p {
-      font-size: 1.5rem;
-      line-height: 1.5;
-      margin-bottom: 2rem; }
