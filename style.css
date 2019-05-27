@@ -103,12 +103,12 @@ html {
     font-size: 6rem;
     font-weight: 500;
     margin-bottom: 1.5rem;
-    text-shadow: 0 0 2px #020122; }
+    text-shadow: 0 0 2px #020122, 0 0 1px #020122; }
   .Hero-tagline {
     font-size: 2rem;
     line-height: 1.5;
     margin-bottom: 2rem;
-    text-shadow: 0 0 2px #020122; }
+    text-shadow: 0 0 2px #020122, 0 0 1px #020122; }
   .Hero-button {
     display: inline-block;
     padding: 1.5rem 2rem;
