@@ -207,20 +207,6 @@ html {
       color: #FFF;
     }
   }
-
-  .vanta-canvas {
-    @include md-query {
-      transform: scale(1.2);
-    }
-
-    @include sm-query {
-      transform: scale(1.4);
-    }
-
-    @include xs-query {
-      transform: scale(1.6);
-    }
-  }
 }
 
 
