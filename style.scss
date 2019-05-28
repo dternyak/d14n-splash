@@ -117,6 +117,7 @@ html {
   justify-content: center;
   align-items: center;
   text-align: center;
+  overflow: hidden;
   color: #FFF;
 
   span {
@@ -138,13 +139,26 @@ html {
     padding: 1rem;
     max-width: 46rem;
     margin-bottom: 5vh;
+
+    @include sm-query {
+      max-width: 40rem;
+    }
   }
 
   &-title {
     font-size: 6rem;
+    line-height: 1.5;
     font-weight: 500;
     margin-bottom: 1.5rem;
     text-shadow: 0 0 2px $dark, 0 0 1px $dark;
+
+    @include sm-query {
+      font-size: 5.4rem;
+    }
+
+    @include xs-query {
+      font-size: 4rem;
+    }
   }
 
   &-tagline {
@@ -152,27 +166,59 @@ html {
     line-height: 1.5;
     margin-bottom: 2rem;
     text-shadow: 0 0 2px $dark, 0 0 1px $dark;
+
+    @include sm-query {
+      font-size: 1.8rem;
+    }
+
+    @include xs-query {
+      font-size: 1.6rem;
+    }
   }
 
   &-button {
     display: inline-block;
     padding: 1.5rem 2rem;
     margin-bottom: 2rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
     letter-spacing: 0.15rem;
     font-weight: 500;
     text-transform: uppercase;
     background: $primary;
     color: #FFF;
+
+    @include sm-query {
+      padding: 2rem 3rem;
+      font-size: 1.4rem;
+    }
   }
 
   &-more {
     display: block;
     color: #CCC;
     text-shadow: 0 0 2px rgba($dark, 1);
+    font-size: 1rem;
+
+    @include sm-query {
+      font-size: 1.2rem;
+    }
 
     &:hover {
       color: #FFF;
+    }
+  }
+
+  .vanta-canvas {
+    @include md-query {
+      transform: scale(1.2);
+    }
+
+    @include sm-query {
+      transform: scale(1.4);
+    }
+
+    @include xs-query {
+      transform: scale(1.6);
     }
   }
 }
@@ -187,6 +233,7 @@ html {
 
   &-title {
     font-size: 3.6rem;
+    line-height: 1.5;
     font-weight: bold;
     margin-bottom: 5rem;
     text-align: center;
@@ -206,6 +253,7 @@ html {
     &-img {
       width: 100%;
       max-height: 90vh;
+      max-width: 480px;
       margin-bottom: 1rem;
       border-radius: 8px;
       background-position: center;
@@ -238,20 +286,21 @@ html {
 
   &-title {
     font-size: 2.6rem;
+    line-height: 1.5;
     font-weight: bold;
     margin-bottom: 2rem;
     text-align: center;
   }
 
   &-logos {
-    padding: 2rem;
+    padding: 1.5rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 
     img {
-      margin: 1rem 2.5rem;
+      margin: 1.5rem 2.5rem;
       opacity: 0.5;
     }
   }
@@ -268,7 +317,9 @@ html {
 
   &-title {
     font-size: 2.6rem;
+    line-height: 1.5;
     font-weight: bold;
+    text-align: center;
     margin-bottom: 2rem;
     color: #FFF;
   }
@@ -284,5 +335,10 @@ html {
     text-transform: uppercase;
     background: $primary;
     color: #FFF;
+
+    @include sm-query {
+      padding: 2rem 3rem;
+      font-size: 1.4rem;
+    }
   }
 }
