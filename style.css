@@ -85,6 +85,10 @@ html {
   text-align: center;
   overflow: hidden;
   color: #FFF; }
+  @media (max-width: 640px) {
+    .Hero {
+      background-image: url("./images/static-net.png");
+      background-size: cover; } }
   .Hero span {
     color: #0984e3; }
   .Hero-fade {
@@ -107,8 +111,7 @@ html {
     font-size: 6rem;
     line-height: 1.5;
     font-weight: 500;
-    margin-bottom: 1.5rem;
-    text-shadow: 0 0 2px #020122, 0 0 1px #020122; }
+    margin-bottom: 1.5rem; }
     @media (max-width: 640px) {
       .Hero-title {
         font-size: 5.4rem; } }
@@ -118,14 +121,15 @@ html {
   .Hero-tagline {
     font-size: 2rem;
     line-height: 1.5;
-    margin-bottom: 2rem;
-    text-shadow: 0 0 2px #020122, 0 0 1px #020122; }
+    margin-bottom: 2rem; }
     @media (max-width: 640px) {
       .Hero-tagline {
         font-size: 1.8rem; } }
     @media (max-width: 380px) {
       .Hero-tagline {
         font-size: 1.6rem; } }
+  .Hero-title, .Hero-tagline {
+    text-shadow: 0 0 4px #020122, 0 0 2px #020122, 0 0 1px #020122; }
   .Hero-button {
     display: inline-block;
     padding: 1.5rem 2rem;

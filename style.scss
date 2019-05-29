@@ -120,6 +120,11 @@ html {
   overflow: hidden;
   color: #FFF;
 
+  @include sm-query {
+    background-image: url('./images/static-net.png');
+    background-size: cover;
+  }
+
   span {
     color: $primary;
   }
@@ -150,7 +155,6 @@ html {
     line-height: 1.5;
     font-weight: 500;
     margin-bottom: 1.5rem;
-    text-shadow: 0 0 2px $dark, 0 0 1px $dark;
 
     @include sm-query {
       font-size: 5.4rem;
@@ -165,7 +169,7 @@ html {
     font-size: 2rem;
     line-height: 1.5;
     margin-bottom: 2rem;
-    text-shadow: 0 0 2px $dark, 0 0 1px $dark;
+    
 
     @include sm-query {
       font-size: 1.8rem;
@@ -174,6 +178,13 @@ html {
     @include xs-query {
       font-size: 1.6rem;
     }
+  }
+
+  &-title,
+  &-tagline {
+    text-shadow: 0 0 4px $dark,
+                 0 0 2px $dark,
+                 0 0 1px $dark;
   }
 
   &-button {
