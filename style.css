@@ -83,7 +83,6 @@ html {
   justify-content: center;
   align-items: center;
   text-align: center;
-  overflow: hidden;
   color: #FFF; }
   @media (max-width: 640px) {
     .Hero {
@@ -112,12 +111,19 @@ html {
     line-height: 1.5;
     font-weight: 500;
     margin-bottom: 1.5rem; }
+    .Hero-title img {
+      height: 5.4rem;
+      filter: drop-shadow(0 0 1px #020122); }
     @media (max-width: 640px) {
       .Hero-title {
-        font-size: 5.4rem; } }
+        font-size: 5.4rem; }
+        .Hero-title img {
+          height: 4.8rem; } }
     @media (max-width: 380px) {
       .Hero-title {
-        font-size: 4rem; } }
+        font-size: 4rem; }
+        .Hero-title img {
+          height: 3.2rem; } }
   .Hero-tagline {
     font-size: 2rem;
     line-height: 1.5;

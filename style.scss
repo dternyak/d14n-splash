@@ -117,7 +117,6 @@ html {
   justify-content: center;
   align-items: center;
   text-align: center;
-  overflow: hidden;
   color: #FFF;
 
   @include sm-query {
@@ -156,12 +155,25 @@ html {
     font-weight: 500;
     margin-bottom: 1.5rem;
 
+    img {
+      height: 5.4rem;
+      filter: drop-shadow(0 0 1px $dark);
+    }
+
     @include sm-query {
       font-size: 5.4rem;
+
+      img {
+        height: 4.8rem;
+      }
     }
 
     @include xs-query {
       font-size: 4rem;
+
+      img {
+        height: 3.2rem;
+      }
     }
   }
 
